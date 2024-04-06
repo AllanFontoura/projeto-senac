@@ -1,38 +1,41 @@
 {% extends 'topo.html' %}
 
-
-
 {% block content %}
-
     <h4>Lista de Cidades Atendidas</h4>
 
-<div class="cont-cidade">
+    <a href="{% url 'link_cadastrar' %}">Clique Aqui para cadastrar uma nova Cidade</a>
+
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Cidade</th>
+                <th>Local</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th>Gerenciar</th>
             </tr>
         </thead>
         <tbody>
-            {% if lista_cidade %}
-                {% for cidade in lista_cidade %}
+            {% if lista %}
+                {% for cidade in lista %}
                     <tr>
                         <td>{{ cidade.local }}</td>
                         <td>{{ cidade.telefone }}</td>
                         <td>{{ cidade.email }}</td>
+                        <td>
+                         <a href="{% url 'deletar_cidade' cidade.id %}">
+                            Excluir</a>
+                            <a href="{% url 'editar_cidade' cidade.id %}">
+                            Editar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             {% else %}
                 <tr>
                     <td class="text-center" colspan="3">
-                        Nenhuma Cidade cadastrada
+                        Nenhuma cidade cadastrada
                     </td>
                 </tr>
             {% endif %}
         </tbody>
     </table>
-</div>
-<div class="link-cadastro"><a href="{% url 'link_cadastrar' %}">clique para cadastrar</a></div>
 {% endblock %}

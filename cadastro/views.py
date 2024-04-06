@@ -4,10 +4,11 @@ from datetime import datetime
 from .models import Clientes
 
 def cadastro(request):
-    return render(request, 'cadastro.html')
+    return render(request, 'listar_clientes.html')
 
 def listar(request):
-    return render(request, 'listar_clientes.html')
+    lista_clientes = Clientes.objects.all()
+    return render(request,'cadastro.html', {'lista': lista_clientes})
 
 def criar(request):
     nome = request.POST['nome']
