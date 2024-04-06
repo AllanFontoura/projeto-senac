@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Onibus</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+<style>
+    .top {
+        background-color: #e2e1b6;
+        height: 125px;
+    }
+
+    .top img{
+        width: 130px;
+    height: 120px;
+    margin-top: -50px;
+    margin-left: 50px;
+    }
+    
+   
+    .textoTop {
+        color: white;
+        font-size: 80px;
+        font-family: fantasy;
+    }
+
+    .btn {margin-inline-end: auto;}
+
+    .cont-faleconosco {
+        margin-left: 15px;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #b4b48f;
+  font-family: fantasy;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #65665c;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="top"><img src="{% static 'images/busao-removebg-preview.png' %}" alt="Minha Imagem"><span class="textoTop">Ônibus</span></div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'cadastro' %}">Cadastro</a></li>
+            <li><a href="{% url 'cidades' %}">Cidades Atendidas</a></li>
+            <li><a href="{% url 'faleconosco' %}">Fale Conosco</a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

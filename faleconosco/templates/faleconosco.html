@@ -1,0 +1,32 @@
+{% extends 'topo.html' %}
+
+{% block content %}
+<h1>Fale Conosco</h1>
+
+<div class="cont-faleconosco">
+  <strong>Nome</strong><br>
+      
+      <input type="text" name="nome" id="nome" style="width:250px;">
+      <br>
+      <br>
+      <strong>E-mail</strong><br>
+      <input type="email" name="email" id="email" style="width:250px;">
+      <br>
+      <br>
+      <strong>Telefone</strong><br>
+      <input type="text" name="telefone" id="telefone" style="width:250px;">
+      <br>
+      <br>
+      <strong>Assunto</strong><br>
+      <input type="text" name="assunto" id="assunto" style="width:250px;">
+      <br>
+      <br>
+      <strong>Mensagem</strong><br>
+      <textarea name="mensagem" rows="7" id="mensagem" style="width:400px;"></textarea>
+      <br><br>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-sucess">Enviar</button>
+    </div>
+  </div>
+
+{% endblock %}
